@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,14 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapper\AutoMapperBusinessConfig.cs" />
+    <Compile Include="AutoMapper\DataTransferObjectToDomainMappingProfile.cs" />
+    <Compile Include="AutoMapper\DomainToDataTransferObjectMappingProfile.cs" />
+    <Compile Include="ContratoService.cs" />
     <Compile Include="Dtos\ArquivoDTO.cs" />
-    <Compile Include="Dtos\ClienteDTO.cs" />
     <Compile Include="Dtos\ContratoDTO.cs" />
     <Compile Include="Dtos\UsuarioDTO.cs" />
+    <Compile Include="Interfaces\IArquivoService.cs" />
+    <Compile Include="Interfaces\IContratoService.cs" />
+    <Compile Include="Interfaces\IUsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\Contratos.Domain\Contratos.Domain.csproj">
+      <Project>{D7AA5C43-FD30-42FC-AF6F-B8CD0C329943}</Project>
+      <Name>Contratos.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contratos.Repositories\Contratos.Repositories.csproj">
+      <Project>{FA3F72AC-DC0A-41BA-8286-BDE5053BCC9B}</Project>
+      <Name>Contratos.Repositories</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
