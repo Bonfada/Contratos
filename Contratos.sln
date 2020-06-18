@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contratos.MVC", "Contratos.MVC\Contratos.MVC.csproj", "{47813580-F67F-4F45-ACC4-DD6FD3129D0D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{83149038-71CE-4B68-9037-4EC246B72404}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{327A84F1-8F33-4F99-8287-EF09A5BBDA04}"
@@ -35,10 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{47813580-F67F-4F45-ACC4-DD6FD3129D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47813580-F67F-4F45-ACC4-DD6FD3129D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47813580-F67F-4F45-ACC4-DD6FD3129D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47813580-F67F-4F45-ACC4-DD6FD3129D0D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C328E857-00DB-419B-8BF7-876DD2E0408D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C328E857-00DB-419B-8BF7-876DD2E0408D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C328E857-00DB-419B-8BF7-876DD2E0408D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -64,7 +58,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{47813580-F67F-4F45-ACC4-DD6FD3129D0D} = {83149038-71CE-4B68-9037-4EC246B72404}
 		{C328E857-00DB-419B-8BF7-876DD2E0408D} = {327A84F1-8F33-4F99-8287-EF09A5BBDA04}
 		{D7AA5C43-FD30-42FC-AF6F-B8CD0C329943} = {62144C48-0717-4F13-A67B-DFF8EE9893AB}
 		{7E0A8916-07B3-492A-A51A-F998606B3AEA} = {F05DEAEA-CE44-431F-AA26-9411501E520D}
