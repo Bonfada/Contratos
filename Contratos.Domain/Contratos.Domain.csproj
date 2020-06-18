@@ -44,7 +44,6 @@
     <Compile Include="Entities\Arquivo.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Contrato.cs" />
-    <Compile Include="Entities\TipoContrato.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

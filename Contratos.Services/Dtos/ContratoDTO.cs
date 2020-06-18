@@ -11,5 +11,6 @@ namespace Contratos.Services.Dtos
         public decimal Valor { get; set; }
         public DateTime MesAno { get; set; }
         public int Duracao { get; set; }
+        public int Quantidade { get; set; }
     }
 }

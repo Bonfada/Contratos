@@ -24,6 +24,7 @@ namespace Contratos.App.Controllers
             _usuarioSerivce = usuarioBusiness;
         }
 
+        [Authorize]
         public ActionResult Cadastrar()
         {
             return View();
@@ -92,8 +93,14 @@ namespace Contratos.App.Controllers
             if (!String.IsNullOrWhiteSpace(viewModel.UrlRetorno) || Url.IsLocalUrl(viewModel.UrlRetorno))
                 return Redirect(viewModel.UrlRetorno);
             else
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Mensagens", "Home");
 
+        }
+
+        public ActionResult Logout()
+        {
+            Request.GetOwinContext().Authentication.SignOut("ApplicationCookie");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

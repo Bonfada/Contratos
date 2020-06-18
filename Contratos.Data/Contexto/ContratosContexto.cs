@@ -16,7 +16,6 @@ namespace Contratos.Data.Contexto
         public DbSet<Arquivo> Arquivo { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Contrato> Contrato { get; set; }
-        public DbSet<TipoContrato> TipoContrato { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -31,7 +30,6 @@ namespace Contratos.Data.Contexto
             modelBuilder.Configurations.Add(new ArquivoConfiguration());
             modelBuilder.Configurations.Add(new ClienteConfiguration());
             modelBuilder.Configurations.Add(new ContratoConfiguration());
-            modelBuilder.Configurations.Add(new TipoContratoConfiguration());
             modelBuilder.Configurations.Add(new UsuarioConfiguration());
         }
     }

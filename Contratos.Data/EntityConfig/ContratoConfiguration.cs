@@ -11,10 +11,10 @@ namespace Contratos.Data.EntityConfig
             HasKey(c => c.Id);
             Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(c => c.Quantidade).IsRequired();
+            Property(c => c.Tipo).IsRequired().HasMaxLength(50); 
             Property(c => c.Valor).IsRequired();
             HasRequired(c => c.Arquivo).WithMany().HasForeignKey(p => p.ArquivoId);
             HasRequired(c => c.Cliente).WithMany().HasForeignKey(p => p.ClienteId);
-            HasRequired(c => c.Tipo).WithMany().HasForeignKey(p => p.TipoId);
         }
     }
 }

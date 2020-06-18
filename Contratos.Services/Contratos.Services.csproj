@@ -49,6 +49,7 @@
     <Compile Include="AutoMapper\DomainToDataTransferObjectMappingProfile.cs" />
     <Compile Include="ContratoService.cs" />
     <Compile Include="Dtos\ArquivoDTO.cs" />
+    <Compile Include="Dtos\ClienteDTO.cs" />
     <Compile Include="Dtos\ContratoDTO.cs" />
     <Compile Include="Dtos\UsuarioDTO.cs" />
     <Compile Include="Interfaces\IArquivoService.cs" />

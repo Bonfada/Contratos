@@ -11,7 +11,7 @@ namespace Contratos.Data.EntityConfig
             HasKey(c => c.Id);
             Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(c => c.Nome).IsRequired().HasMaxLength(50);
-            Property(c => c.Cnpj).IsRequired().HasMaxLength(14);
+            Property(c => c.Email).IsRequired().HasMaxLength(50);
         }
     }
 }
