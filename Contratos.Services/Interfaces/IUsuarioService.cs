@@ -6,6 +6,6 @@ namespace Contratos.Services.Interfaces
     public interface IUsuarioService
     {
         void Add(UsuarioDTO contrato);
-        IEnumerable<UsuarioDTO> Buscar();
+        IEnumerable<UsuarioDTO> List();
     }
 }

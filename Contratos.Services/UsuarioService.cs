@@ -23,11 +23,12 @@ namespace Contratos.Services
         public void Add(UsuarioDTO usuario)
         {
             _usuarioRepository.Add(_mapper.Map<Usuario>(usuario));
+            _usuarioRepository.Save();
         }
 
-        public IEnumerable<UsuarioDTO> Buscar()
+        public IEnumerable<UsuarioDTO> List()
         {
-            return _mapper.Map<IEnumerable<UsuarioDTO>>(_usuarioRepository.Buscar());
+            return _mapper.Map<IEnumerable<UsuarioDTO>>(_usuarioRepository.Listar());
         }
     }
 }

@@ -12,8 +12,7 @@ namespace Contratos.Data.EntityConfig
             Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(c => c.Nome).IsRequired().HasMaxLength(50);
             Property(c => c.Login).IsRequired().HasMaxLength(15);
-            Property(c => c.Senha).IsRequired().HasMaxLength(8);
-            Property(c => c.Email).IsRequired().HasMaxLength(50);
+            Property(c => c.Senha).IsRequired().HasMaxLength(100);
         }
     }
 }
