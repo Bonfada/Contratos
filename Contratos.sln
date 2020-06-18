@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contratos.Data", "Contratos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contratos.Repositories", "Contratos.Repositories\Contratos.Repositories.csproj", "{FA3F72AC-DC0A-41BA-8286-BDE5053BCC9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contratos.Ioc", "Contratos.Ioc\Contratos.Ioc.csproj", "{4A24E02E-78DA-43A9-860A-2079E595B18A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{FA3F72AC-DC0A-41BA-8286-BDE5053BCC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA3F72AC-DC0A-41BA-8286-BDE5053BCC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA3F72AC-DC0A-41BA-8286-BDE5053BCC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A24E02E-78DA-43A9-860A-2079E595B18A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A24E02E-78DA-43A9-860A-2079E595B18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A24E02E-78DA-43A9-860A-2079E595B18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A24E02E-78DA-43A9-860A-2079E595B18A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{A30A2B08-96FC-475A-BE37-C437ACB86708} = {F05DEAEA-CE44-431F-AA26-9411501E520D}
 		{8D0A5992-1C12-4A1D-9FC2-42D7A06FDCFA} = {A30A2B08-96FC-475A-BE37-C437ACB86708}
 		{FA3F72AC-DC0A-41BA-8286-BDE5053BCC9B} = {F8D65FB2-5892-462B-94DD-E7DEC15D57F7}
+		{4A24E02E-78DA-43A9-860A-2079E595B18A} = {7E0A8916-07B3-492A-A51A-F998606B3AEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C94DAC91-CCD2-4991-8AC0-11F4F32A9EAB}

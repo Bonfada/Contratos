@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace Contratos.Repositories.Repository
 {
-    public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
+    public class ContratoRepository : BaseRepository<Contrato>, IContratoRepository
     {
-        public UsuarioRepository(ContratosContexto context) :base(context) {}
-        
-        public IEnumerable<Usuario> Buscar()
+        public ContratoRepository(ContratosContexto context) : base(context) { }
+
+        public IEnumerable<Contrato> Buscar()
         {
             return entidade.AsNoTracking().ToList();
         }
