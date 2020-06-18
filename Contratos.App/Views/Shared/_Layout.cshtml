@@ -20,7 +20,8 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Cadastre-se", "Cadastrar", "Autenticacao")</li>
                 </ul>
             </div>
         </div>
@@ -36,5 +37,9 @@
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts",false)
+
+
+
 </body>
 </html>

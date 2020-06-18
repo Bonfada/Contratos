@@ -1,3 +1,6 @@
+using Contratos.App.App_Start;
+using Contratos.App.AutoMapper;
+using Contratos.Services.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +16,11 @@ namespace Contratos.App
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            AutoMapperMVCConfig.RegisterMappings();
+            AutoMapperBusinessConfig.RegisterMappings();
+
+            IocConfiguration.ConfigureDependencyInjection();
         }
     }
 }

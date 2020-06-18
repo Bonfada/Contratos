@@ -3,6 +3,8 @@ using AutoMapper;
 using Contratos.Data.Contexto;
 using Contratos.Repositories.Interfaces;
 using Contratos.Repositories.Repository;
+using Contratos.Services;
+using Contratos.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -38,8 +40,14 @@ namespace Contratos.Ioc
                 .InstancePerLifetimeScope();
             #endregion
 
+            #region Services
+            builder.SetarVidaUtilInstancia<IUsuarioService, UsuarioService>();
+            #endregion
+
+            #region Repositories
             builder.SetarVidaUtilInstancia<IContratoRepository, ContratoRepository>();
             builder.SetarVidaUtilInstancia<IUsuarioRepository, UsuarioRepository>();
+            #endregion Repositories
         }
 
         public static void SetarVidaUtilInstancia<T, E>(this ContainerBuilder builder)

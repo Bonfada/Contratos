@@ -9,3 +9,4 @@ namespace Contratos.Repositories.Interfaces
         IEnumerable<Contrato> Buscar();
     }
 }
+

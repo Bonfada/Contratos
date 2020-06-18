@@ -85,6 +85,10 @@
       <Project>{FA3F72AC-DC0A-41BA-8286-BDE5053BCC9B}</Project>
       <Name>Contratos.Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Contratos.Services\Contratos.Services.csproj">
+      <Project>{C328E857-00DB-419B-8BF7-876DD2E0408D}</Project>
+      <Name>Contratos.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
