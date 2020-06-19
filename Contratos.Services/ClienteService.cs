@@ -26,6 +26,24 @@ namespace Contratos.Services
             _clienteRepository.Save();
         }
 
+        public void Delete(ClienteDTO cliente)
+        {
+            var obj = _clienteRepository.GetById(cliente.Id);
+            _clienteRepository.Delete(obj);
+            _clienteRepository.Save();
+        }
+
+        public void Edit(ClienteDTO cliente)
+        {
+            _clienteRepository.Update(_mapper.Map<Cliente>(cliente));
+            _clienteRepository.Save();
+        }
+
+        public ClienteDTO GetById(int id)
+        {
+            return _mapper.Map<ClienteDTO>(_clienteRepository.GetById(id));
+        }
+
         public IEnumerable<ClienteDTO> List()
         {
             return _mapper.Map<IEnumerable<ClienteDTO>>(_clienteRepository.Buscar());

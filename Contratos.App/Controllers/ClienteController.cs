@@ -16,7 +16,7 @@ namespace Contratos.App.Controllers
         private readonly IClienteService _clienteSerivce;
 
         public ClienteController(
-            IMapper mapper, 
+            IMapper mapper,
             IClienteService clienteSerivce)
         {
             _mapper = mapper;
@@ -48,6 +48,42 @@ namespace Contratos.App.Controllers
             _clienteSerivce.Add(_mapper.Map<ClienteDTO>(viewModel));
 
             //TempData["Mensagem"] = "Cadastro realizado com sucesso.";0
+            return RedirectToAction("Index", "Cliente");
+        }
+
+        [Authorize]
+        public ActionResult Editar(int id)
+        {
+            var clienteViewModel = _mapper.Map<ClienteViewModel>(_clienteSerivce.GetById(id));
+            return View(clienteViewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Editar(ClienteViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            _clienteSerivce.Edit(_mapper.Map<ClienteDTO>(viewModel));
+
+            return RedirectToAction("Index", "Cliente");
+        }
+
+        [Authorize]
+        public ActionResult Excluir(int id)
+        {
+            var clienteViewModel = _mapper.Map<ClienteViewModel>(_clienteSerivce.GetById(id));
+            return View(clienteViewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Excluir(ClienteViewModel viewModel)
+        {
+            _clienteSerivce.Delete(_mapper.Map<ClienteDTO>(viewModel));
             return RedirectToAction("Index", "Cliente");
         }
     }

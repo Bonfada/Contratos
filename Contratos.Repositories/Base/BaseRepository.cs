@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -31,7 +32,7 @@ namespace Contratos.Repositories.Base
 
         public void Delete(TEntity obj)
         {
-            throw new System.NotImplementedException();
+            entidade.Remove(obj);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -70,7 +71,7 @@ namespace Contratos.Repositories.Base
 
         public void Update(TEntity obj)
         {
-            throw new System.NotImplementedException();
+            entidade.AddOrUpdate(obj);
         }
     }
 }
