@@ -27,7 +27,7 @@ namespace Contratos.App.ViewModels
         [DisplayName("Duração em meses do contrato")]
         public int Duracao { get; set; }
 
-        public virtual ClienteViewModel Cliente { get; set; }
+        public virtual ClienteViewModel Clientes { get; set; }
 
     }
 }

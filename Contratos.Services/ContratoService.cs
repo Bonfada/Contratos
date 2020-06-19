@@ -26,7 +26,7 @@ namespace Contratos.Services
             _contratoRepository.Save();
         }
 
-        public IEnumerable<ContratoDTO> Buscar()
+        public IEnumerable<ContratoDTO> List()
         {
             return _mapper.Map<IEnumerable<ContratoDTO>>(_contratoRepository.Buscar());
         }

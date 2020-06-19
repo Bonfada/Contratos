@@ -9,6 +9,6 @@ namespace Contratos.Services.Interfaces
         void Edit(ContratoDTO cliente);
         void Delete(ContratoDTO cliente);
         ContratoDTO GetById(int id);
-        IEnumerable<ContratoDTO> Buscar();
+        IEnumerable<ContratoDTO> List();
     }
 }
