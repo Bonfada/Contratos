@@ -41,12 +41,17 @@ namespace Contratos.Ioc
             #endregion
 
             #region Services
+            builder.SetarVidaUtilInstancia<IClienteService, ClienteService>();
+            builder.SetarVidaUtilInstancia<IContratoService, ContratoService>();
             builder.SetarVidaUtilInstancia<IUsuarioService, UsuarioService>();
             #endregion
 
             #region Repositories
+            builder.SetarVidaUtilInstancia<IClienteRepository, ClienteRepository>();
             builder.SetarVidaUtilInstancia<IContratoRepository, ContratoRepository>();
             builder.SetarVidaUtilInstancia<IUsuarioRepository, UsuarioRepository>();
+
+            
             #endregion Repositories
         }
 

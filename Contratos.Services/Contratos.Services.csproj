@@ -47,12 +47,14 @@
     <Compile Include="AutoMapper\AutoMapperBusinessConfig.cs" />
     <Compile Include="AutoMapper\DataTransferObjectToDomainMappingProfile.cs" />
     <Compile Include="AutoMapper\DomainToDataTransferObjectMappingProfile.cs" />
+    <Compile Include="ClienteService.cs" />
     <Compile Include="ContratoService.cs" />
     <Compile Include="Dtos\ArquivoDTO.cs" />
     <Compile Include="Dtos\ClienteDTO.cs" />
     <Compile Include="Dtos\ContratoDTO.cs" />
     <Compile Include="Dtos\UsuarioDTO.cs" />
     <Compile Include="Interfaces\IArquivoService.cs" />
+    <Compile Include="Interfaces\IClienteService.cs" />
     <Compile Include="Interfaces\IContratoService.cs" />
     <Compile Include="Interfaces\IUsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

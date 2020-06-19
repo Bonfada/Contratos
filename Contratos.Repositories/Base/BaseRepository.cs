@@ -13,14 +13,6 @@ namespace Contratos.Repositories.Base
         protected readonly DbSet<TEntity> entidade;
         private bool _disposed;
 
-        //public BaseRepository()
-        //{
-        //    if (_context == null)
-        //        _context = new ContratosContexto();
-
-        //    entidade = _context.Set<TEntity>();
-        //}
-
         public BaseRepository(ContratosContexto context)
         {
             _context = context;
