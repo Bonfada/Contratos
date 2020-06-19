@@ -23,11 +23,21 @@ namespace Contratos.App.Controllers
             _clienteSerivce = clienteSerivce;
         }
 
+        [Authorize]
+        public ActionResult Index()
+        {
+            var clienteViewModel = _mapper.Map<IEnumerable<ClienteViewModel>>(_clienteSerivce.List());
+            return View(clienteViewModel);
+        }
+
+        [Authorize]
         public ActionResult Cadastrar()
         {
             return View();
         }
 
+        [Authorize]
+        [HttpPost]
         public ActionResult Cadastrar(ClienteViewModel viewModel)
         {
             if (!ModelState.IsValid)
@@ -37,8 +47,8 @@ namespace Contratos.App.Controllers
 
             _clienteSerivce.Add(_mapper.Map<ClienteDTO>(viewModel));
 
-            TempData["Mensagem"] = "Cadastro realizado com sucesso.";
-            return RedirectToAction("Mensagens", "Home");
+            //TempData["Mensagem"] = "Cadastro realizado com sucesso.";0
+            return RedirectToAction("Index", "Cliente");
         }
     }
 }

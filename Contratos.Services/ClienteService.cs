@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Contratos.Domain.Entities;
 using Contratos.Repositories.Interfaces;
 using Contratos.Services.Dtos;
 using Contratos.Services.Interfaces;
@@ -19,14 +20,15 @@ namespace Contratos.Services
             _clienteRepository = usuarioRepository;
         }
 
-        public void Add(ClienteDTO contrato)
+        public void Add(ClienteDTO cliente)
         {
-            throw new System.NotImplementedException();
+            _clienteRepository.Add(_mapper.Map<Cliente>(cliente));
+            _clienteRepository.Save();
         }
 
         public IEnumerable<ClienteDTO> List()
         {
-            throw new System.NotImplementedException();
+            return _mapper.Map<IEnumerable<ClienteDTO>>(_clienteRepository.Buscar());
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Contratos.Services
         public void Add(ContratoDTO contrato)
         {
             _contratoRepository.Add(_mapper.Map<Contrato>(contrato));
+            _contratoRepository.Save();
         }
 
         public IEnumerable<ContratoDTO> Buscar()

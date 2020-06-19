@@ -7,7 +7,7 @@ namespace Contratos.App.ViewModels
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Informe o nome.")]
-        [MinLength(6, ErrorMessage = "O nome deve ter no mínimo 5 carácteres")]
+        [MinLength(2, ErrorMessage = "O nome deve ter no mínimo 2 carácteres")]
         [MaxLength(50, ErrorMessage = "O nome deve ter no máximo 50 carácteres")]
         public string Nome { get; set; }
 

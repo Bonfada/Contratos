@@ -188,6 +188,7 @@
     <Content Include="Views\Cliente\Cadastrar.cshtml" />
     <Content Include="Views\Home\Mensagens.cshtml" />
     <Content Include="Views\PerfilUsuario\AlterarSenha.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

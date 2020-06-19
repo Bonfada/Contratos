@@ -9,6 +9,8 @@ namespace Contratos.Services.AutoMapper
         public DataTransferObjectToDomainMappingProfile()
         {
             CreateMap<UsuarioDTO, Usuario>();
+            CreateMap<ClienteDTO, Cliente>();
+                 
             CreateMap<ContratoDTO, Contrato>();
         }
     }

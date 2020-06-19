@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Contratos.Domain.Entities;
+using Contratos.Services.Dtos;
 
 namespace Contratos.Services.AutoMapper
 {
@@ -6,7 +8,9 @@ namespace Contratos.Services.AutoMapper
     {
         public DomainToDataTransferObjectMappingProfile()
         {
-
+            CreateMap<Usuario, UsuarioDTO>();
+            CreateMap<Cliente, ClienteDTO>();
+            CreateMap<Contrato, ContratoDTO>();
         }
     }
 }
