@@ -13,16 +13,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ClienteId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ClienteId", (IEnumerable<SelectListItem>)ViewBag.ClienteId, new { @class = "form-control ClienteSelect2" })
+                @Html.DropDownList("Cliente", (IEnumerable<SelectListItem>)ViewBag.ClienteId, new { @class = "form-control ClienteSelect2", @datatoggle = "tooltip", @dataplacement = "top", @title = "Nome do Cliente" })
                 @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
 
-                @Html.DropDownList("Tipo", (IEnumerable<SelectListItem>)ViewBag.TipoContrato, new { @class = " form-control TipoContratoSelect2" })
+                @Html.DropDownList("Tipo", (IEnumerable<SelectListItem>)ViewBag.TipoContrato, new { @class = " form-control TipoContratoSelect2", @datatoggle = "tooltip", @dataplacement = "top", @title = "Tipo de Contrato (Compra e Venda)" })
                 @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NomeArquivo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NomeArquivo, new { htmlAttributes = new { type = "file",  @accept = "application/pdf", @id = "Inputfile", @class= "custom-file-input" } })
+                @Html.EditorFor(model => model.NomeArquivo, new { htmlAttributes = new { type = "file",  @accept = "application/pdf", @id = "Inputfile", @class= "custom-file-input", @datatoggle = "tooltip", @dataplacement = "top", @title = "Arquivo PDF com o contrato" }})
                 @Html.ValidationMessageFor(model => model.NomeArquivo, "", new { @class = "text-danger" })
 
 
@@ -40,7 +40,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Quantidade, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Quantidade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Quantidade, new { htmlAttributes = new { @class = "form-control", @datatoggle = "tooltip", @dataplacement = "top", @title = "Quantidade Negociada" }})
                 @Html.ValidationMessageFor(model => model.Quantidade, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control", @datatoggle = "tooltip", @dataplacement = "top", @title = "Valor Negociado" }})
                 @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MesAno, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MesAno, new { htmlAttributes = new { @class = "form-control" ,type = "date" } })
+                @Html.EditorFor(model => model.MesAno, new { htmlAttributes = new { @class = "form-control" ,type = "date", @datatoggle = "tooltip", @dataplacement = "top", @title = "Mês/Ano do início do contrato" } })
                 @Html.ValidationMessageFor(model => model.MesAno, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -64,14 +64,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Duracao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Duracao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Duracao, new { htmlAttributes = new { @class = "form-control", @datatoggle = "tooltip", @dataplacement = "top", @title = "Duração em meses do contrato" }})
                 @Html.ValidationMessageFor(model => model.Duracao, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -84,42 +84,10 @@
     <link href="~/Content/css/select2.min.css" rel="stylesheet" />
     <script src="~/Scripts/select2.min.js"></script>
 
-    <link href="~/Content/jQuery.FileUpload/css/jquery.fileupload.css" rel="stylesheet" />
-    <script src="~/Scripts/jQuery.FileUpload/jquery.fileupload.js"></script>
-
     <script>
-
-
-
-                //$('document').ready(function () {
-                //    $(".ClienteSelect2").select2({
-                //        placeholder: "Select Cliente",
-                //        allowClear: true,
-                //        theme: "classic",
-                //        ajax: {
-                //            url: "/Contrato/BuscarClientes",
-                //            datatype: 'json',
-                //            delay: 250,
-                //            data: function (params) {
-                //                return {
-                //                    searchTerm: params.term
-                //                };
-                //            },
-                //            processResult: function (data, params) {
-                //                return {
-                //                    results: data.results
-                //                }
-                //            }
-                //        }
-                //    });
-
-                    //$(".TipoContratoSelect2").select2({
-                    //    placeholder: "Selecione",
-                    //    allowClear: true
-                    //});
-
-
-
+        $(document).ready(function () {
+            $('[datatoggle="tooltip"]').tooltip();
+        });
     </script>
 }
 
