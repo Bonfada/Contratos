@@ -6,11 +6,14 @@ namespace Contratos.Services.Dtos
     {
         public int Id { get; set; }
         public int ClienteId { get; set; }
-        public int TipoId { get; set; }
-        public int ArquivoId { get; set; }
+        public string Tipo { get; set; }
+        public string NomeArquivo { get; set; }
+        public byte[] Arquivo { get; set; }
         public decimal Valor { get; set; }
         public DateTime MesAno { get; set; }
         public int Duracao { get; set; }
         public int Quantidade { get; set; }
+
+        public ClienteDTO Cliente { get; set; }
     }
 }

@@ -4,6 +4,10 @@ using Contratos.Repositories.Interfaces;
 using Contratos.Services.Dtos;
 using Contratos.Services.Interfaces;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Diagnostics.Contracts;
+using System.IO;
+using System.Web;
 
 namespace Contratos.Services
 {
@@ -22,6 +26,8 @@ namespace Contratos.Services
 
         public void Add(ContratoDTO contrato)
         {
+            AtualizarConteudoArquivo(contrato);
+
             _contratoRepository.Add(_mapper.Map<Contrato>(contrato));
             _contratoRepository.Save();
         }
@@ -47,6 +53,14 @@ namespace Contratos.Services
         public ContratoDTO GetById(int id)
         {
             return _mapper.Map<ContratoDTO>(_contratoRepository.GetById(id));
+        }
+
+
+        private void AtualizarConteudoArquivo(ContratoDTO contrato)
+        {
+            string path = HttpContext.Current.Server.MapPath($"~/App_Data/Contratos/{contrato.NomeArquivo}");
+            byte[] fileConvert = File.ReadAllBytes(path);
+            contrato.Arquivo = fileConvert;
         }
     }
 }

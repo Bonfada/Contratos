@@ -24,7 +24,6 @@ namespace Contratos.App.Controllers
             _usuarioSerivce = usuarioBusiness;
         }
 
-        [Authorize]
         public ActionResult Cadastrar()
         {
             return View();

@@ -6,13 +6,15 @@ namespace Contratos.App.ViewModels
 {
     public class ContratoViewModel
     {
+        [DisplayName("Cliente")]
         public int ClienteId { get; set; }
         
-        [DisplayName("Tipo do Contrato (Compra e Venda)")]
+        [DisplayName("Tipo")]
         public string Tipo { get; set; }
-        public int ArquivoId { get; set; }
+        public string NomeArquivo { get; set; }
+        public string Arquivo { get; set; }
 
-        [DisplayName("Quantidade Negociada")]
+        [DisplayName("Quantidade")]
         public int Quantidade { get; set; }
 
         [DataType(DataType.Currency)]
@@ -21,13 +23,15 @@ namespace Contratos.App.ViewModels
         [DisplayName("Valor Negociado")]
         public decimal Valor { get; set; }
 
-        [DisplayName("Mês/Ano do início do contrato")]
+        [DisplayName("Mês/Ano")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime MesAno { get; set; }
 
-        [DisplayName("Duração em meses do contrato")]
+        [DisplayName("Duração")]
         public int Duracao { get; set; }
 
-        public virtual ClienteViewModel Clientes { get; set; }
+        public virtual ClienteViewModel Cliente { get; set; }
 
     }
 }

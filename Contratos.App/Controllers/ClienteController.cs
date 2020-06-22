@@ -47,7 +47,6 @@ namespace Contratos.App.Controllers
 
             _clienteSerivce.Add(_mapper.Map<ClienteDTO>(viewModel));
 
-            //TempData["Mensagem"] = "Cadastro realizado com sucesso.";0
             return RedirectToAction("Index", "Cliente");
         }
 

@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Contratos.App.ViewModels;
+using Contratos.Services.Dtos;
 using Contratos.Services.Interfaces;
 using Contratos.Services.Util;
 using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Contratos.App.Controllers
@@ -15,7 +17,7 @@ namespace Contratos.App.Controllers
         private readonly IClienteService _clienteSerivce;
 
         public ContratoController(
-            IMapper mapper, 
+            IMapper mapper,
             IContratoService contratoSerivce,
             IClienteService clienteSerivce)
         {
@@ -40,11 +42,18 @@ namespace Contratos.App.Controllers
             return View();
         }
 
-        public ActionResult BuscarClientes(string searchTerm)
+        [Authorize]
+        [HttpPost]
+        public ActionResult Cadastrar(ContratoViewModel viewModel)
         {
-            var data = _clienteSerivce.List();
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
 
+            _contratoSerivce.Add(_mapper.Map<ContratoDTO>(viewModel));
+
+            return RedirectToAction("Index", "Contrato");
+        }
     }
 }

@@ -10,8 +10,9 @@ namespace Contratos.Services.AutoMapper
         {
             CreateMap<UsuarioDTO, Usuario>();
             CreateMap<ClienteDTO, Cliente>();
-                 
+
             CreateMap<ContratoDTO, Contrato>();
+                
         }
     }
 }

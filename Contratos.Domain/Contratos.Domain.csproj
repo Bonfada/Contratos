@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Arquivo.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Contrato.cs" />
     <Compile Include="Entities\Usuario.cs" />
