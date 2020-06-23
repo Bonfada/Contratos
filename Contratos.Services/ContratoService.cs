@@ -4,10 +4,7 @@ using Contratos.Repositories.Interfaces;
 using Contratos.Services.Dtos;
 using Contratos.Services.Interfaces;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Diagnostics.Contracts;
 using System.IO;
-using System.Linq;
 using System.Web;
 
 namespace Contratos.Services
@@ -41,12 +38,16 @@ namespace Contratos.Services
         public void Delete(ContratoDTO contrato)
         {
             var obj = _contratoRepository.GetById(contrato.Id);
-            _contratoRepository.Delete(_mapper.Map<Contrato>(contrato));
+            _contratoRepository.Delete(obj);
             _contratoRepository.Save();
         }
 
         public void Edit(ContratoDTO contrato)
         {
+            var _contrato = _contratoRepository.GetById(contrato.Id);
+            if (!string.IsNullOrEmpty(contrato.NomeArquivo) && contrato.NomeArquivo != _contrato.NomeArquivo)
+                AtualizarConteudoArquivo(contrato);
+
             _contratoRepository.Update(_mapper.Map<Contrato>(contrato));
             _contratoRepository.Save();
         }

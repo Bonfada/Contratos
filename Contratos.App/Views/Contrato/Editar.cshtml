@@ -8,10 +8,12 @@
 
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Arquivo)
+        @Html.HiddenFor(model => model.NomeArquivo)
         <div class="form-group">
             @Html.LabelFor(model => model.ClienteId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ClienteId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("ClienteId", (IEnumerable<SelectListItem>)ViewBag.ClienteId, new { @class = "form-control ClienteSelect2", @datatoggle = "tooltip", @dataplacement = "top", @title = "Nome do Cliente" })
                 @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -19,7 +21,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tipo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Tipo", (IEnumerable<SelectListItem>)ViewBag.TipoContrato, new { @class = " form-control TipoContratoSelect2", @datatoggle = "tooltip", @dataplacement = "top", @title = "Tipo de Contrato (Compra e Venda)" })
                 @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -27,16 +29,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NomeArquivo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NomeArquivo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.NomeArquivo, new { htmlAttributes = new { type = "file", @accept = "application/pdf", @id = "Inputfile", @class = "custom-file-input", @datatoggle = "tooltip", @dataplacement = "top", @title = "Arquivo PDF com o contrato" } })
                 @Html.ValidationMessageFor(model => model.NomeArquivo, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Arquivo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NomeArquivo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Arquivo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Arquivo, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.NomeArquivo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.NomeArquivo, "", new { @class = "text-danger" })
             </div>
         </div>
 

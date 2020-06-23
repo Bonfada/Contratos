@@ -57,6 +57,8 @@ namespace Contratos.App.Controllers
         [Authorize]
         public ActionResult Editar(int id)
         {
+            ViewBag.TipoContrato = new SelectList(Enum.GetValues(typeof(Util.Enum.TipoContratoEnum)));
+            ViewBag.ClienteId = new SelectList(_clienteSerivce.List(), "Id", "Nome");
             var contratoViewModel = _mapper.Map<ContratoViewModel>(_contratoSerivce.GetById(id));
             return View(contratoViewModel);
         }

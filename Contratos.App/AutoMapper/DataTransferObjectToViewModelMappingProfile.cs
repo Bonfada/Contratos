@@ -14,8 +14,8 @@ namespace Contratos.App.AutoMapper
                 .ForMember(dest => dest.Senha, opt => opt.MapFrom(src => Hash.GerarHash(src.Senha)));
 
             CreateMap<ClienteViewModel, ClienteDTO>();
-            CreateMap<ContratoViewModel, ContratoDTO>()
-                .ForMember(dest => dest.Arquivo, opt => opt.Ignore()); ;
+            CreateMap<ContratoViewModel, ContratoDTO>();
+                
         }
     }
 }
