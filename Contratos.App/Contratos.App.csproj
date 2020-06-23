@@ -193,6 +193,9 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\desafionorus - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\desafionorus - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\desafionorus - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\i18n\af.js" />
     <Content Include="Scripts\i18n\ar.js" />
@@ -322,6 +325,8 @@
     <Content Include="Views\Contrato\Index.cshtml" />
     <Content Include="Views\Contrato\Cadastrar.cshtml" />
     <Content Include="Views\Arquivo\Cadastrar.cshtml" />
+    <Content Include="Views\Contrato\Editar.cshtml" />
+    <Content Include="Views\Contrato\Excluir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

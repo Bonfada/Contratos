@@ -2,10 +2,8 @@
 using Contratos.App.ViewModels;
 using Contratos.Services.Dtos;
 using Contratos.Services.Interfaces;
-using Contratos.Services.Util;
 using System;
 using System.Collections.Generic;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Contratos.App.Controllers
@@ -55,5 +53,42 @@ namespace Contratos.App.Controllers
 
             return RedirectToAction("Index", "Contrato");
         }
+
+        [Authorize]
+        public ActionResult Editar(int id)
+        {
+            var contratoViewModel = _mapper.Map<ContratoViewModel>(_contratoSerivce.GetById(id));
+            return View(contratoViewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Editar(ContratoViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            _contratoSerivce.Edit(_mapper.Map<ContratoDTO>(viewModel));
+
+            return RedirectToAction("Index", "Contrato");
+        }
+
+        [Authorize]
+        public ActionResult Excluir(int id)
+        {
+            var contratoViewModel = _mapper.Map<ContratoViewModel>(_contratoSerivce.GetById(id));
+            return View(contratoViewModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult Excluir(ContratoViewModel viewModel)
+        {
+            _contratoSerivce.Delete(_mapper.Map<ContratoDTO>(viewModel));
+            return RedirectToAction("Index", "Contrato");
+        }
+
     }
 }
