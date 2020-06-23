@@ -52,6 +52,10 @@
     <Compile Include="EntityConfig\ClienteConfiguration.cs" />
     <Compile Include="EntityConfig\ContratoConfiguration.cs" />
     <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
+    <Compile Include="Migrations\202006222324058_Initial.cs" />
+    <Compile Include="Migrations\202006222324058_Initial.Designer.cs">
+      <DependentUpon>202006222324058_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +68,11 @@
       <Project>{D7AA5C43-FD30-42FC-AF6F-B8CD0C329943}</Project>
       <Name>Contratos.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006222324058_Initial.resx">
+      <DependentUpon>202006222324058_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
