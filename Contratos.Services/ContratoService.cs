@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics.Contracts;
 using System.IO;
+using System.Linq;
 using System.Web;
 
 namespace Contratos.Services
@@ -59,8 +60,13 @@ namespace Contratos.Services
         private void AtualizarConteudoArquivo(ContratoDTO contrato)
         {
             string path = HttpContext.Current.Server.MapPath($"~/App_Data/Contratos/{contrato.NomeArquivo}");
-            byte[] fileConvert = File.ReadAllBytes(path);
+
+            var caminho = @"c:\temp\contratos";
+            string arquivo = $@"{caminho}\{contrato.NomeArquivo}";
+            byte[] fileConvert = File.ReadAllBytes(arquivo);
             contrato.Arquivo = fileConvert;
+
+
         }
     }
 }
